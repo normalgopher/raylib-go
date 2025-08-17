@@ -1440,6 +1440,7 @@ RLAPI void DrawTextureEx(Texture2D texture, Vector2 position, float rotation, fl
 RLAPI void DrawTextureRec(Texture2D texture, Rectangle source, Vector2 position, Color tint);            // Draw a part of a texture defined by a rectangle
 RLAPI void DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color tint); // Draw a part of a texture defined by a rectangle with 'pro' parameters
 RLAPI void DrawTextureNPatch(Texture2D texture, NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin, float rotation, Color tint); // Draws a texture (or part of it) that stretches or shrinks nicely
+RLAPI void DrawTextureUV(Texture2D texture, Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4, Vector2 uv1, Vector2 uv2, Vector2 uv3, Vector2 uv4, Color tint); // Draw a texture with custom UV mapping
 
 // Color/pixel related functions
 RLAPI bool ColorIsEqual(Color col1, Color col2);                            // Check if two colors are equal
