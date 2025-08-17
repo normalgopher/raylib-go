@@ -929,3 +929,17 @@ func DrawTextureNPatch(texture Texture2D, nPatchInfo NPatchInfo, dest Rectangle,
 	ctint := colorCptr(tint)
 	C.DrawTextureNPatch(*ctexture, *cnPatchInfo, *cdest, *corigin, crotation, *ctint)
 }
+
+func DrawTextureUV(texture Texture2D, v1, v2, v3, v4 Vector2, uv1, uv2, uv3, uv4 Vector2, tint color.RGBA) {
+	ctexture := texture.cptr()
+	cv1 := v1.cptr()
+	cv2 := v2.cptr()
+	cv3 := v3.cptr()
+	cv4 := v4.cptr()
+	cuv1 := uv1.cptr()
+	cuv2 := uv2.cptr()
+	cuv3 := uv3.cptr()
+	cuv4 := uv4.cptr()
+	ctint := colorCptr(tint)
+	C.DrawTextureUV(*ctexture, *cv1, *cv2, *cv3, *cv4, *cuv1, *cuv2, *cuv3, *cuv4, *ctint)
+}

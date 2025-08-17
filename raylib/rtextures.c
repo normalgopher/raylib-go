@@ -4815,6 +4815,27 @@ void DrawTextureNPatch(Texture2D texture, NPatchInfo nPatchInfo, Rectangle dest,
     }
 }
 
+void DrawTextureUV(Texture2D texture, Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4, Vector2 uv1, Vector2 uv2, Vector2 uv3, Vector2 uv4, Color tint)
+{
+    rlSetTexture(texture.id);
+    rlBegin(RL_QUADS);
+        rlColor4ub(tint.r, tint.g, tint.b, tint.a);
+
+        rlTexCoord2f(uv1.x, uv1.y);
+        rlVertex2f(v1.x, v1.y);
+
+        rlTexCoord2f(uv2.x, uv2.y);
+        rlVertex2f(v2.x, v2.y);
+
+        rlTexCoord2f(uv3.x, uv3.y);
+        rlVertex2f(v3.x, v3.y);
+
+        rlTexCoord2f(uv4.x, uv4.y);
+        rlVertex2f(v4.x, v4.y);
+    rlEnd();
+    rlSetTexture(0);
+}
+
 // Check if two colors are equal
 bool ColorIsEqual(Color col1, Color col2)
 {

@@ -346,6 +346,16 @@ func DrawTriangleStrip(points []Vector2, col color.RGBA) {
 	C.DrawTriangleStrip(cpoints, cpointsCount, *ccolor)
 }
 
+func DrawTriangleGradient(v1, v2, v3 Vector2, c1, c2, c3 color.RGBA) {
+	cv1 := v1.cptr()
+	cv2 := v2.cptr()
+	cv3 := v3.cptr()
+	cc1 := colorCptr(c1)
+	cc2 := colorCptr(c2)
+	cc3 := colorCptr(c3)
+	C.DrawTriangleGradient(*cv1, *cv2, *cv3, *cc1, *cc2, *cc3)
+}
+
 // DrawPoly - Draw a regular polygon (Vector version)
 func DrawPoly(center Vector2, sides int32, radius, rotation float32, col color.RGBA) {
 	ccenter := center.cptr()
